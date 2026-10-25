@@ -1,0 +1,269 @@
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --cyan: #77e5ff;
+  --gold: #f5d99a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: #f4f8ff;
+  font-family: Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 30%, #123b50 0%, transparent 58%),
+    linear-gradient(160deg, #020710, #091c30 65%, #020710);
+}
+
+#rain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.moon {
+  position: fixed;
+  top: 7%;
+  right: 9%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #e4f3ff;
+  box-shadow: 0 0 35px #b6e3ff70;
+  opacity: .7;
+}
+
+.app, .finish {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: auto;
+  padding: 35px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 20px 0 8px;
+  font-size: clamp(38px, 10vw, 48px);
+  color: #fff6df;
+  text-shadow: 0 0 28px #6ddfff30;
+}
+
+.subtitle {
+  color: #afc7d9;
+  font-size: 14px;
+}
+
+.divider {
+  color: var(--cyan);
+  margin: 14px 0;
+  font-size: 14px;
+}
+
+.ring {
+  width: 210px;
+  height: 210px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.track, .progress {
+  fill: none;
+  stroke-width: 7;
+}
+
+.track {
+  stroke: #ffffff12;
+}
+
+.progress {
+  stroke: var(--cyan);
+  stroke-linecap: round;
+  stroke-dasharray: 615.75;
+  stroke-dashoffset: 615.75;
+  transition: stroke-dashoffset .25s ease;
+  filter: drop-shadow(0 0 6px #77e5ff70);
+}
+
+.number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.number strong {
+  font-size: 57px;
+  font-variant-numeric: tabular-nums;
+}
+
+.number span {
+  margin-top: 5px;
+  color: #a9c4d8;
+  font-size: 14px;
+}
+
+.remaining {
+  margin: 4px 0 12px;
+  color: #b6cddd;
+  font-size: 14px;
+}
+
+.remaining span {
+  color: var(--gold);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.dhikr {
+  width: 100%;
+  max-width: 285px;
+  min-height: 75px;
+  border: 1px solid #80e7ff70;
+  border-radius: 20px;
+  background: linear-gradient(130deg, #10445f, #087d9d, #10445f);
+  color: white;
+  box-shadow: 0 8px 30px #009ac51c, inset 0 1px #ffffff30;
+  transition: transform .12s, filter .15s;
+}
+
+.dhikr:active {
+  transform: scale(.96);
+  filter: brightness(1.2);
+}
+
+.dhikr span, .dhikr small {
+  display: block;
+}
+
+.dhikr span {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.dhikr small {
+  margin-top: 5px;
+  color: #d1f4ff;
+  font-size: 11px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.secondary {
+  padding: 12px 17px;
+  border: 1px solid #ffffff22;
+  border-radius: 30px;
+  background: #ffffff0b;
+  color: #c8e4f3;
+  font-size: 13px;
+}
+
+.secondary:active {
+  background: #ffffff1b;
+}
+
+.status {
+  color: #a9c3d6;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 22px;
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 18px;
+  color: #a9c3d6;
+  font-size: 13px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.finish {
+  justify-content: center;
+  animation: appear .8s ease both;
+}
+
+.star {
+  color: var(--gold);
+  font-size: 55px;
+  text-shadow: 0 0 30px #f5d99a60;
+}
+
+.finish h2 {
+  font-size: 39px;
+  line-height: 1.8;
+  color: #fff0c9;
+}
+
+.salawat {
+  font-size: 23px;
+  line-height: 2;
+  color: #e2f6ff;
+}
+
+.finish .dhikr {
+  margin-top: 20px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-height: 740px) {
+  .app { padding-top: 17px; }
+  h1 { margin-top: 10px; }
+  .divider { margin: 7px 0; }
+  .ring { width: 175px; height: 175px; }
+  .number strong { font-size: 48px; }
+  .dhikr { min-height: 65px; }
+  .status { margin-top: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
